@@ -14,4 +14,10 @@ SRC_URI="mirror://gnu/readline/readline-${VERSION}.tar.gz"
 
 export DLLVERSION=7
 
+PKG_NAMES="libreadline${DLLVERSION} libreadline-devel"
+declare libreadline${DLLVERSION}_CONTENTS="usr/bin/*${DLLVERSION}.dll"
+libreadline_devel_CONTENTS="usr/include/ usr/lib/ usr/share/"
+
 NO_AUTOHEADER=1
+
+CYGCONF_ARGS="bash_cv_termcap_lib=libncurses"
